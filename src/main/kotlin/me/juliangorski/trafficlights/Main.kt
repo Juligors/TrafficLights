@@ -12,8 +12,8 @@ fun main(args: Array<String>) {
 
     for (command in commands) {
         when (command) {
-            is AddVehicle -> println(command)
-            is Step -> println(command)
+            is Command.AddVehicle -> println("${command.vehicleId}, ${command.startRoad}, ${command.endRoad}")
+            is Command.Step -> println(command)
         }
     }
 
