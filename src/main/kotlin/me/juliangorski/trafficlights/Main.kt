@@ -1,7 +1,5 @@
 package me.juliangorski.trafficlights
 
-import kotlinx.serialization.json.Json
-import java.io.File
 
 fun main(args: Array<String>) {
     if (args.size != 2) {
@@ -10,14 +8,9 @@ fun main(args: Array<String>) {
     val inputFilename = args[0]
     val outputFilename = args[1]
 
-    val json = Json {
-        classDiscriminator = "type"
-    }
+    val commands = loadCommands(inputFilename)
 
-    val jsonString = File(inputFilename).readText()
-    val commandList = json.decodeFromString<CommandList>(jsonString)
-
-    for (command in commandList.commands) {
+    for (command in commands) {
         when (command) {
             is AddVehicle -> println(command)
             is Step -> println(command)
