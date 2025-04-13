@@ -16,4 +16,12 @@ fun main(args: Array<String>) {
             is Step -> println(command)
         }
     }
+
+    val stepStatuses = listOf(
+        StepStatus(listOf("vehicle1", "vehicle2")),
+        StepStatus(listOf()),
+        StepStatus(listOf("vehicle3")),
+        StepStatus(listOf("vehicle4")),
+    )
+    saveStepStatuses(stepStatuses, outputFilename)
 }
