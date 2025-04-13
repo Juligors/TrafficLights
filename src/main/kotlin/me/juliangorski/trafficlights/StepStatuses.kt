@@ -14,6 +14,7 @@ private val json = Json {
 }
 
 fun saveStepStatuses(stepStatuses: List<StepStatus>, filename: String) {
+    // NOTE: we need this class because of input json format
     @Serializable
     @SerialName("stepStatuses")
     data class StepStatusList(
