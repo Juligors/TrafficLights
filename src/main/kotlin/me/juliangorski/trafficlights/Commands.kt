@@ -23,12 +23,8 @@ fun loadCommands(filename: String): List<Command> {
         val commands: List<Command>
     )
 
-    val json = Json {
-        classDiscriminator = "type"
-    }
-
     val jsonString = File(filename).readText()
-    val commandList = json.decodeFromString<CommandList>(jsonString)
+    val commandList = Json.decodeFromString<CommandList>(jsonString)
 
     return commandList.commands
 }
