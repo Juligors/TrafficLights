@@ -1,3 +1,5 @@
+package me.juliangorski.trafficlights
+
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
